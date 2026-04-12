@@ -1,0 +1,129 @@
+body {
+  background-color: #3d5ef0;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.container {
+  width: 60%;
+  max-width: 470px;
+  background-color: white;
+  padding: 15px;
+  margin: 15px auto;
+  border-radius: 15px;
+  box-shadow: 0 15px 20px #0000001a;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.input {
+  width: 100%;
+  height: 2.5rem;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  font-size: 0.8rem;
+  padding: 0 10px;
+}
+
+.input:focus {
+  border: 1px solid #4b6ef5;
+  outline: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.para {
+  font-size: 0.7rem;
+}
+
+.blue {
+  color: #4b6ef5;
+}
+
+.btn {
+  display: block;
+  border-radius: 5px;
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  box-sizing: border-box;
+  height: 2.5rem;
+  cursor: pointer;
+}
+
+.log-in-btn {
+  background-color: #4b6ef5;
+  color: whitesmoke;
+  font-size: 0.8rem;
+}
+
+.log-in-btn:hover {
+  background-color: #3a56c5;
+  color: white;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #999;
+  margin: 20px auto;
+  font-size: 0.8rem;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #ccc;
+}
+
+.bottom-btn {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 10px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.icon {
+  width: 20px;
+}
+
+.fa-facebook {
+  color: whitesmoke;
+}
+
+.facebook-btn {
+  background-color: #384a96;
+  color: whitesmoke;
+}
+
+.fa-google {
+  color: darkgreen;
+}
+
+.google-btn {
+  background-color: whitesmoke;
+}
+
+.bottom-btn span {
+  flex: 1;
+  text-align: center;
+}

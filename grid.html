@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="grid.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <main class="container">
+      <div class="header"></div>
+
+      <section class="banner"></section>
+
+      <!---------- SIDEBAR SECTION ---------->
+      <section class="sidebar">
+        <!-- HEAD -->
+        <div class="head">
+          <div class="user-img">
+            <img src="/assets/images/profile-alt.jpg" alt="" />
+          </div>
+
+          <div class="user-details">
+            <p class="user-title">Full-Stack Developer</p>
+            <p class="user-name">Lester Viloria</p>
+          </div>
+        </div>
+
+        <hr class="line" />
+
+        <!-- MAIN -->
+        <div class="nav">
+          <div class="main">
+            <p class="main-title">Main</p>
+            <div class="menu">
+              <div class="menu-item">
+                <div class="menu-link" tabindex="0">
+                  <i class="fa-solid fa-house"></i>
+                  <a href="#">Dashboard</a>
+                </div>
+              </div>
+
+              <div class="menu-item">
+                <div class="menu-link" onclick="toggleMenu(this)" tabindex="0">
+                  <i class="fa-regular fa-user"></i>
+                  <a href="#">Audience</a>
+                  <i class="fa-solid fa-angle-down arrow"></i>
+                </div>
+
+                <ul class="submenu">
+                  <li tabindex="0"><a href="#">Visits</a></li>
+                  <li tabindex="0"><a href="#">Users</a></li>
+                </ul>
+              </div>
+
+              <div class="menu-item">
+                <div class="menu-link" tabindex="0">
+                  <i class="fa-regular fa-note-sticky"></i>
+                  <a href="#">Posts</a>
+                </div>
+              </div>
+
+              <div class="menu-item">
+                <div class="menu-link" tabindex="0">
+                  <i class="fa-regular fa-calendar"></i>
+                  <a href="#">Schedule</a>
+                </div>
+              </div>
+
+              <div class="menu-item">
+                <div class="menu-link" onclick="toggleMenu(this)" tabindex="0">
+                  <i class="fa-solid fa-chart-column"></i>
+                  <a href="#">Income</a>
+                  <i class="fa-solid fa-angle-down arrow"></i>
+                </div>
+
+                <ul class="submenu">
+                  <li tabindex="0"><a href="#">Earnings</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="line" />
+
+        <!-- SETTING -->
+        <div class="setting">
+          <p class="setting-title">Setting</p>
+          <div class="setting-item" tabindex="0">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+          </div>
+        </div>
+
+        <!-- ACCOUNT -->
+        <div class="account">
+          <p class="account-title">Account</p>
+          <div class="account-list">
+            <div class="account-item" tabindex="0">
+              <i class="fa-regular fa-circle-question"></i>
+              <span>Help</span>
+            </div>
+
+            <div class="account-item" tabindex="0">
+              <i class="fa-sharp fa-solid fa-arrow-right-from-bracket"></i>
+              <span>Logout</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/grid.js"></script>
+  </body>
+</html>
