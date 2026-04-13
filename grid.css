@@ -56,8 +56,6 @@
   height: 100%;
   min-width: 100px;
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -71,8 +69,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   box-sizing: border-box;
-  justify-content: left;
-  align-items: flex-start;
   gap: 16px;
   margin: 20px 20px;
 }
@@ -119,8 +115,6 @@
   display: flex;
   flex-direction: column;
   margin: 20px 20px;
-  justify-content: left;
-  align-items: flex-start;
   box-sizing: border-box;
   flex-wrap: wrap;
 }
@@ -139,6 +133,8 @@
 .menu {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  flex-wrap: wrap;
   gap: 8px;
   width: 100%;
   color: var(--lavander-gray);
@@ -147,19 +143,18 @@
   font-weight: 600;
 }
 
-.menu-item {
-  display: flex;
-  flex-direction: column;
-}
-
 .menu-link {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: border-box;
   align-items: center;
   gap: 10px;
   padding: 10px;
   border-radius: 6px;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
+  width: 100%;
 }
 
 .menu-link:hover {
@@ -177,19 +172,16 @@
 .menu-link a {
   text-decoration: none;
   color: inherit;
+  flex: 1;
+  font-size: 0.8rem;
 }
 
 .menu-link i {
-  font-size: 14px;
-}
-
-.menu-link span {
-  font-size: 14px;
+  font-size: 0.8rem;
 }
 
 .arrow {
-  margin-left: auto;
-  transition: 0.3s;
+  transition: all 0.3s;
 }
 
 .arrow.rotate {
@@ -200,10 +192,10 @@
   list-style: none;
   max-height: 0;
   overflow: hidden;
-  transition: 0.3s ease;
   margin-top: 5px;
   background-color: var(--white);
   border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
 .submenu.show {
@@ -214,7 +206,7 @@
   padding: 10px 15px 10px 40px;
   font-size: 0.7rem;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .submenu li:hover {
@@ -239,8 +231,6 @@
   display: flex;
   flex-direction: column;
   margin: 20px 20px;
-  justify-content: left;
-  align-items: flex-start;
   box-sizing: border-box;
   flex-wrap: wrap;
 }
@@ -269,7 +259,7 @@
   color: var(--lavander-gray);
   padding: 10px;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .setting-item:hover {
@@ -288,13 +278,13 @@
 .account {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   margin: 0 20px;
   margin-top: auto;
   margin-bottom: 20px;
   justify-content: left;
   align-items: flex-start;
   box-sizing: border-box;
-  flex-wrap: wrap;
 }
 
 .account-title {
@@ -313,6 +303,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 10px;
   width: 100%;
 }
@@ -330,7 +321,7 @@
   color: var(--lavander-gray);
   padding: 10px;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .account-item:hover {
