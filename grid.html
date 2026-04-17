@@ -12,12 +12,54 @@
   </head>
   <body>
     <main class="container">
-      <div class="header"></div>
+      <div class="header">
+        <div class="header-item">
+          <div class="header-text">
+            <p>LesterDev</p>
+          </div>
 
-      <section class="banner"></section>
+          <div class="header-icon">
+            <a href="#">
+              <i class="fa-solid fa-share" tabindex="0"></i>
+            </a>
+            <a href="#" class="icon-badge">
+              <i class="fa-solid fa-comment-dots" tabindex="0"></i>
+              <span class="badge active"></span>
+            </a>
+            <a href="#" class="icon-badge">
+              <i class="fa-solid fa-bell" tabindex="0"></i>
+              <span class="badge active"></span>
+            </a>
+          </div>
+
+          <div class="header-line"></div>
+
+          <button id="theme-switch">
+            <i class="fa-solid fa-moon"></i>
+            <i class="fa-solid fa-sun"></i>
+          </button>
+
+          <div class="search-item">
+            <search>
+              <form>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input name="search" id="search" placeholder="Search" />
+              </form>
+            </search>
+          </div>
+        </div>
+      </div>
+
+      <section class="banner">
+        <div class="banner-item">
+          <div class="banner-title">
+            <h2>Dashboard</h2>
+          </div>
+        </div>
+      </section>
 
       <!---------- SIDEBAR SECTION ---------->
-      <section class="sidebar active">
+      <section class="sidebar">
         <!-- HEAD -->
         <div class="menu-btn">
           <i class="fa-solid fa-angle-left"></i>
@@ -48,7 +90,7 @@
 
             <div class="menu-item">
               <div class="menu-link" onclick="toggleMenu(this)" tabindex="0">
-                <i class="fa-regular fa-user"></i>
+                <i class="fa-solid fa-user"></i>
                 <a href="#" class="text">Audience</a>
                 <i class="fa-solid fa-angle-down arrow"></i>
               </div>
@@ -61,14 +103,14 @@
 
             <div>
               <div class="menu-link" tabindex="0">
-                <i class="fa-regular fa-note-sticky"></i>
+                <i class="fa-solid fa-square-pen"></i>
                 <a href="#" class="text">Posts</a>
               </div>
             </div>
 
             <div>
               <div class="menu-link" tabindex="0">
-                <i class="fa-regular fa-calendar"></i>
+                <i class="fa-solid fa-calendar-days"></i>
                 <a href="#" class="text">Schedule</a>
               </div>
             </div>
@@ -107,14 +149,14 @@
           <p class="account-title">Account</p>
           <div class="account-list">
             <div class="account-item" tabindex="0">
-              <i class="fa-regular fa-circle-question"></i>
+              <i class="fa-solid fa-circle-info"></i>
               <span>
                 <a href="#" class="text">Help</a>
               </span>
             </div>
 
             <div class="account-item" tabindex="0">
-              <i class="fa-sharp fa-solid fa-arrow-right-from-bracket"></i>
+              <i class="fa-solid fa-right-from-bracket"></i>
               <span>
                 <a href="#" class="text">Logout</a>
               </span>
@@ -122,9 +164,14 @@
           </div>
         </div>
       </section>
+
+      <section class="sidecards"></section>
+
+      <section class="hero"></section>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="grid.js"></script>
+    <script type="text/javascript" src="darkmode.js" defer></script>
   </body>
 </html>
