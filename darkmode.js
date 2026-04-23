@@ -22,3 +22,27 @@ themeSwitch.addEventListener("click", () => {
     ? disableDarkmode()
     : enableDarkmode();
 });
+
+// System preference detection (optional)
+if (
+  !darkmode &&
+  window.matchMedia &&
+  window.matchMedia("(prefers-color-scheme: dark)").matches
+) {
+  enableDarkmode();
+}
+
+// Listen for system theme changes
+if (window.matchMedia) {
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", (e) => {
+      if (!localStorage.getItem("darkmode")) {
+        if (e.matches) {
+          enableDarkmode();
+        } else {
+          disableDarkmode();
+        }
+      }
+    });
+}

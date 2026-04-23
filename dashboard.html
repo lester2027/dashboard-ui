@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LesterDev Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <main class="container">
+      <div class="sidebar-overlay"></div>
+
+      <!---------- HEADER ---------->
+      <div class="header">
+        <div class="header-item">
+          <h1 class="header-title">Dashboard</h1>
+          <div class="header-right">
+            <button class="header-icon-btn menu-toggle" title="Menu">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="search-item">
+              <search>
+                <form>
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input name="search" id="search" placeholder="Search..." />
+                </form>
+              </search>
+            </div>
+            <button
+              class="header-icon-btn"
+              id="theme-switch"
+              title="Toggle theme"
+            >
+              <i class="fa-solid fa-moon"></i>
+              <i class="fa-solid fa-sun"></i>
+            </button>
+            <button class="header-icon-btn notif-btn" title="Notifications">
+              <i class="fa-solid fa-bell"></i>
+              <span class="notif-dot"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!---------- BANNER ---------->
+      <section class="banner">
+        <div class="banner-item">
+          <div class="banner-breadcrumb">
+            <i class="fa-solid fa-house"></i>
+            <span>/</span>
+            <span class="breadcrumb-active">Dashboard</span>
+          </div>
+          <p class="banner-welcome">Welcome back, <strong>Lester</strong> 👋</p>
+        </div>
+      </section>
+
+      <!---------- SIDEBAR ---------->
+      <section class="sidebar">
+        <!-- BRAND -->
+        <div class="sidebar-brand">
+          <div class="brand-icon">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <div class="brand-info">
+            <p class="brand-name">LesterDev</p>
+            <p class="brand-role">Full-Stack Developer</p>
+          </div>
+        </div>
+
+        <!-- USER -->
+        <div class="sidebar-user">
+          <div class="user-img">
+            <img src="/assets/images/profile-alt.jpg" alt="Profile" />
+          </div>
+          <div class="user-details">
+            <p class="user-name">Lester Viloria</p>
+            <p class="user-status">● Online</p>
+          </div>
+        </div>
+
+        <!-- COLLAPSE TOGGLE -->
+        <div class="menu-btn">
+          <i class="fa-solid fa-angle-left"></i>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <!-- MAIN NAV -->
+        <div class="sidebar-nav">
+          <p class="nav-label">Main</p>
+          <nav class="menu">
+            <div
+              class="menu-link active-link"
+              tabindex="0"
+              data-tooltip="Dashboard"
+            >
+              <i class="fa-solid fa-house"></i>
+              <a href="#" class="text">Dashboard</a>
+            </div>
+
+            <div class="menu-item">
+              <div
+                class="menu-link"
+                onclick="toggleMenu(this)"
+                tabindex="0"
+                data-tooltip="Audience"
+              >
+                <i class="fa-solid fa-user"></i>
+                <a href="#" class="text">Audience</a>
+                <i class="fa-solid fa-angle-down arrow"></i>
+              </div>
+              <ul class="submenu">
+                <li tabindex="0"><a href="#">Visits</a></li>
+                <li tabindex="0"><a href="#">Users</a></li>
+              </ul>
+            </div>
+
+            <div class="menu-link" tabindex="0" data-tooltip="Posts">
+              <i class="fa-solid fa-square-pen"></i>
+              <a href="#" class="text">Posts</a>
+            </div>
+
+            <div class="menu-link" tabindex="0" data-tooltip="Schedule">
+              <i class="fa-solid fa-calendar-days"></i>
+              <a href="#" class="text">Schedule</a>
+            </div>
+
+            <div class="menu-item">
+              <div
+                class="menu-link"
+                onclick="toggleMenu(this)"
+                tabindex="0"
+                data-tooltip="Projects"
+              >
+                <i class="fa-solid fa-diagram-project"></i>
+                <a href="#" class="text">Projects</a>
+                <i class="fa-solid fa-angle-down arrow"></i>
+              </div>
+              <ul class="submenu">
+                <li tabindex="0"><a href="#">Dashboard UI</a></li>
+                <li tabindex="0"><a href="#">Portfolio Website</a></li>
+                <li tabindex="0"><a href="#">Login UI</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <!-- SETTINGS NAV -->
+        <div class="sidebar-nav">
+          <p class="nav-label">Settings</p>
+          <nav class="menu">
+            <div class="menu-link" tabindex="0" data-tooltip="Settings">
+              <i class="fa-solid fa-gear"></i>
+              <a href="#" class="text">Settings</a>
+            </div>
+            <div class="menu-link" tabindex="0" data-tooltip="Help">
+              <i class="fa-solid fa-circle-info"></i>
+              <a href="#" class="text">Help</a>
+            </div>
+          </nav>
+        </div>
+
+        <!-- LOGOUT -->
+        <div class="sidebar-logout">
+          <div class="menu-link logout-link" tabindex="0" data-tooltip="Logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <a href="#" class="text">Logout</a>
+          </div>
+        </div>
+      </section>
+
+      <!---------- SIDECARDS ---------->
+      <section class="sidecards">
+        <!-- MY SCHEDULE -->
+        <div class="sidecard">
+          <div class="sidecard-header">
+            <h3>My Schedule</h3>
+            <span class="sidecard-icon"
+              ><i class="fa-solid fa-ellipsis"></i
+            ></span>
+          </div>
+          <div class="calendar-container">
+            <div class="calendar-header">
+              <button class="calendar-nav">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <h4>April 2026</h4>
+              <button class="calendar-nav">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+            <div class="calendar-weekdays">
+              <div>S</div>
+              <div>M</div>
+              <div>T</div>
+              <div>W</div>
+              <div>T</div>
+              <div>F</div>
+              <div>S</div>
+            </div>
+            <div class="calendar-days">
+              <div class="empty"></div>
+              <div class="empty"></div>
+              <div class="empty"></div>
+              <div class="empty"></div>
+              <div class="day">1</div>
+              <div class="day">2</div>
+              <div class="day has-event">3</div>
+              <div class="day">4</div>
+              <div class="day">5</div>
+              <div class="day">6</div>
+              <div class="day">7</div>
+              <div class="day has-event">8</div>
+              <div class="day">9</div>
+              <div class="day has-event">10</div>
+              <div class="day">11</div>
+              <div class="day">12</div>
+              <div class="day has-event">13</div>
+              <div class="day">14</div>
+              <div class="day">15</div>
+              <div class="day has-event">16</div>
+              <div class="day">17</div>
+              <div class="day has-event">18</div>
+              <div class="day">19</div>
+              <div class="day">20</div>
+              <div class="day">21</div>
+              <div class="day today">22</div>
+              <div class="day">23</div>
+              <div class="day">24</div>
+              <div class="day">25</div>
+              <div class="day">26</div>
+              <div class="day">27</div>
+              <div class="day">28</div>
+              <div class="day">29</div>
+              <div class="day">30</div>
+            </div>
+          </div>
+          <div class="schedules-list">
+            <h4 class="schedules-title">Upcoming</h4>
+            <div class="schedule-item">
+              <div class="schedule-time">10:00 AM</div>
+              <div class="schedule-info">
+                <p class="schedule-name">Client Meeting</p>
+                <p class="schedule-client">with John Doe</p>
+              </div>
+              <div class="schedule-status">
+                <i
+                  class="fa-solid fa-circle"
+                  style="color: #4caf50; font-size: 0.5rem"
+                ></i>
+              </div>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">2:00 PM</div>
+              <div class="schedule-info">
+                <p class="schedule-name">Design Review</p>
+                <p class="schedule-client">with Team</p>
+              </div>
+              <div class="schedule-status">
+                <i
+                  class="fa-solid fa-circle"
+                  style="color: #ff9800; font-size: 0.5rem"
+                ></i>
+              </div>
+            </div>
+            <div class="schedule-item">
+              <div class="schedule-time">4:30 PM</div>
+              <div class="schedule-info">
+                <p class="schedule-name">Project Kickoff</p>
+                <p class="schedule-client">with Stakeholders</p>
+              </div>
+              <div class="schedule-status">
+                <i
+                  class="fa-solid fa-circle"
+                  style="color: #2196f3; font-size: 0.5rem"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FINISHED PROJECTS -->
+        <div class="sidecard">
+          <div class="sidecard-header">
+            <h3>Finished Projects</h3>
+            <span class="sidecard-icon"
+              ><i class="fa-solid fa-ellipsis"></i
+            ></span>
+          </div>
+          <div class="projects-list">
+            <div class="project-item">
+              <div class="project-icon">
+                <i class="fa-solid fa-palette"></i>
+              </div>
+              <div class="project-info">
+                <p class="project-name">Dashboard UI</p>
+                <p class="project-date">Completed 2 weeks ago</p>
+              </div>
+              <span class="project-status completed"
+                ><i class="fa-solid fa-check"></i
+              ></span>
+            </div>
+            <div class="project-item">
+              <div class="project-icon"><i class="fa-solid fa-globe"></i></div>
+              <div class="project-info">
+                <p class="project-name">Portfolio Website</p>
+                <p class="project-date">Completed 1 month ago</p>
+              </div>
+              <span class="project-status completed"
+                ><i class="fa-solid fa-check"></i
+              ></span>
+            </div>
+            <div class="project-item">
+              <div class="project-icon"><i class="fa-solid fa-shield"></i></div>
+              <div class="project-info">
+                <p class="project-name">Login UI</p>
+                <p class="project-date">Completed 1 month ago</p>
+              </div>
+              <span class="project-status completed"
+                ><i class="fa-solid fa-check"></i
+              ></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!---------- HERO ---------->
+      <section class="hero">
+        <div class="stats-container">
+          <div class="stats-row">
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa-solid fa-eye"></i></div>
+              <div class="stat-content">
+                <p class="stat-label">Total Views</p>
+                <p class="stat-number">661</p>
+              </div>
+              <div class="stat-menu"><i class="fa-solid fa-ellipsis"></i></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+              <div class="stat-content">
+                <p class="stat-label">Total Users</p>
+                <p class="stat-number">23k</p>
+              </div>
+              <div class="stat-menu"><i class="fa-solid fa-ellipsis"></i></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fa-solid fa-diagram-project"></i>
+              </div>
+              <div class="stat-content">
+                <p class="stat-label">Total Projects</p>
+                <p class="stat-number">3</p>
+              </div>
+              <div class="stat-menu"><i class="fa-solid fa-ellipsis"></i></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fa-solid fa-people-group"></i>
+              </div>
+              <div class="stat-content">
+                <p class="stat-label">Total Clients</p>
+                <p class="stat-number">120</p>
+              </div>
+              <div class="stat-menu"><i class="fa-solid fa-ellipsis"></i></div>
+            </div>
+          </div>
+
+          <div class="stats-tabs">
+            <button class="tab-btn active">Recent clients</button>
+            <button class="tab-btn">Client engagement</button>
+          </div>
+
+          <div class="clients-table-container">
+            <table class="clients-table">
+              <thead>
+                <tr>
+                  <th><input type="checkbox" /></th>
+                  <th>Client</th>
+                  <th>Email</th>
+                  <th>Phone number</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td>
+                    <div class="table-client">
+                      <img
+                        src="https://api.dicebear.com/7.x/avataaars/svg?seed=Leslie"
+                        alt="Leslie"
+                      /><span>Leslie Alexander</span>
+                    </div>
+                  </td>
+                  <td>leslie@example.com</td>
+                  <td>(555) 555-0424</td>
+                  <td><span class="status-badge active">Active</span></td>
+                  <td>
+                    <button class="action-btn edit">
+                      <i class="fa-solid fa-pen"></i> Edit</button
+                    ><button class="action-btn del">
+                      <i class="fa-solid fa-trash"></i> Delete
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td>
+                    <div class="table-client">
+                      <img
+                        src="https://api.dicebear.com/7.x/avataaars/svg?seed=Ronald"
+                        alt="Ronald"
+                      /><span>Ronald Richards</span>
+                    </div>
+                  </td>
+                  <td>ronald@example.com</td>
+                  <td>(555) 555-0391</td>
+                  <td><span class="status-badge pending">Pending</span></td>
+                  <td>
+                    <button class="action-btn edit">
+                      <i class="fa-solid fa-pen"></i> Edit</button
+                    ><button class="action-btn del">
+                      <i class="fa-solid fa-trash"></i> Delete
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td>
+                    <div class="table-client">
+                      <img
+                        src="https://api.dicebear.com/7.x/avataaars/svg?seed=Brooklyn"
+                        alt="Brooklyn"
+                      /><span>Brooklyn Simmons</span>
+                    </div>
+                  </td>
+                  <td>brooklyn@example.com</td>
+                  <td>(555) 555-0304</td>
+                  <td><span class="status-badge pending">Pending</span></td>
+                  <td>
+                    <button class="action-btn edit">
+                      <i class="fa-solid fa-pen"></i> Edit</button
+                    ><button class="action-btn del">
+                      <i class="fa-solid fa-trash"></i> Delete
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td>
+                    <div class="table-client">
+                      <img
+                        src="https://api.dicebear.com/7.x/avataaars/svg?seed=Cameron"
+                        alt="Cameron"
+                      /><span>Cameron Williamson</span>
+                    </div>
+                  </td>
+                  <td>cameron@example.com</td>
+                  <td>(555) 555-0309</td>
+                  <td><span class="status-badge active">Active</span></td>
+                  <td>
+                    <button class="action-btn edit">
+                      <i class="fa-solid fa-pen"></i> Edit</button
+                    ><button class="action-btn del">
+                      <i class="fa-solid fa-trash"></i> Delete
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" /></td>
+                  <td>
+                    <div class="table-client">
+                      <img
+                        src="https://api.dicebear.com/7.x/avataaars/svg?seed=Esther"
+                        alt="Esther"
+                      /><span>Esther Howard</span>
+                    </div>
+                  </td>
+                  <td>esther@example.com</td>
+                  <td>(555) 555-0316</td>
+                  <td><span class="status-badge active">Active</span></td>
+                  <td>
+                    <button class="action-btn edit">
+                      <i class="fa-solid fa-pen"></i> Edit</button
+                    ><button class="action-btn del">
+                      <i class="fa-solid fa-trash"></i> Delete
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="recent-views">
+            <div class="views-header">
+              <h3>Recent Views</h3>
+              <span class="views-icon"
+                ><i class="fa-solid fa-ellipsis"></i
+              ></span>
+            </div>
+            <div class="views-list">
+              <div class="view-item">
+                <p class="view-label">Dashboard visited</p>
+                <p class="view-time">2 hours ago</p>
+              </div>
+              <div class="view-item">
+                <p class="view-label">Portfolio viewed</p>
+                <p class="view-time">5 hours ago</p>
+              </div>
+              <div class="view-item">
+                <p class="view-label">Projects page opened</p>
+                <p class="view-time">1 day ago</p>
+              </div>
+              <div class="view-item">
+                <p class="view-label">Schedule checked</p>
+                <p class="view-time">2 days ago</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="dashboard.js"></script>
+    <script type="text/javascript" src="darkmode.js" defer></script>
+  </body>
+</html>
